@@ -1,0 +1,213 @@
+Positioned(
+                            top: 80,
+                            left: isSideBarOpen ? 0 : 10,
+                            right: 10,
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 30),
+                              child: Row(
+                                mainAxisAlignment: isSideBarOpen
+                                    ? MainAxisAlignment.spaceAround
+                                    : MainAxisAlignment.center,
+                                crossAxisAlignment: isSideBarOpen
+                                    ? CrossAxisAlignment.center
+                                    : CrossAxisAlignment.center,
+                                children: [
+                                  isSideBarOpen
+                                      ? Text(
+                                          "Search",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16),
+                                        )
+                                      : Text(" "),
+                                  isSideBarOpen
+                                      ? SizedBox(width: 10)
+                                      : SizedBox(width: 0),
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          HexColor('#F8C764').withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: Center(
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.search,
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: () {},
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            left: isSideBarOpen ? 0 : 10,
+                            right: isSideBarOpen ? 0 : 10,
+                            top: 220,
+                            child: Row(
+                              mainAxisAlignment: isSideBarOpen
+                                  ? MainAxisAlignment.spaceEvenly
+                                  : MainAxisAlignment.center,
+                              crossAxisAlignment: isSideBarOpen
+                                  ? CrossAxisAlignment.center
+                                  : CrossAxisAlignment.center,
+                              children: [
+                                isSideBarOpen
+                                    ? Text(
+                                        "Leg Piece",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 16),
+                                      )
+                                    : Text(" "),
+                                isSideBarOpen
+                                    ? SizedBox(width: 10)
+                                    : SizedBox(width: 0),
+                                Image.asset(
+                                  'assets/images/leg.png',
+                                  width: 30,
+                                  height: 30,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            left: isSideBarOpen ? 0 : 10,
+                            right: isSideBarOpen ? 0 : 10,
+                            top: 300,
+                            child: Row(
+                              mainAxisAlignment: isSideBarOpen
+                                  ? MainAxisAlignment.spaceEvenly
+                                  : MainAxisAlignment.center,
+                              crossAxisAlignment: isSideBarOpen
+                                  ? CrossAxisAlignment.center
+                                  : CrossAxisAlignment.center,
+                              children: [
+                                isSideBarOpen
+                                    ? Text(
+                                        "Pizza",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 16),
+                                      )
+                                    : Text(" "),
+                                isSideBarOpen
+                                    ? SizedBox(width: 10)
+                                    : SizedBox(width: 0),
+                                Image.asset(
+                                  'assets/images/pizza.png',
+                                  width: 30,
+                                  height: 30,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            left: isSideBarOpen ? 0 : 10,
+                            right: isSideBarOpen ? 0 : 10,
+                            top: 380,
+                            child: Row(
+                              mainAxisAlignment: isSideBarOpen
+                                  ? MainAxisAlignment.spaceEvenly
+                                  : MainAxisAlignment.center,
+                              crossAxisAlignment: isSideBarOpen
+                                  ? CrossAxisAlignment.center
+                                  : CrossAxisAlignment.center,
+                              children: [
+                                isSideBarOpen
+                                    ? Text(
+                                        "Hamburger",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 16),
+                                      )
+                                    : Text(" "),
+                                isSideBarOpen
+                                    ? SizedBox(width: 10)
+                                    : SizedBox(width: 0),
+                                Image.asset(
+                                  'assets/images/hamburguer.png',
+                                  width: 30,
+                                  height: 30,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            left: isSideBarOpen ? 0 : 10,
+                            right: isSideBarOpen ? 0 : 10,
+                            top: 460,
+                            child: Row(
+                              mainAxisAlignment: isSideBarOpen
+                                  ? MainAxisAlignment.spaceEvenly
+                                  : MainAxisAlignment.center,
+                              crossAxisAlignment: isSideBarOpen
+                                  ? CrossAxisAlignment.center
+                                  : CrossAxisAlignment.center,
+                              children: [
+                                isSideBarOpen
+                                    ? Text(
+                                        "Hamburger",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 16),
+                                      )
+                                    : Text(" "),
+                                isSideBarOpen
+                                    ? SizedBox(width: 10)
+                                    : SizedBox(width: 0),
+                                Image.asset(
+                                  'assets/images/beer.png',
+                                  width: 30,
+                                  height: 30,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 50,
+                            left: isSideBarOpen ? 0 : 10,
+                            right: isSideBarOpen ? 0 : 10,
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 30),
+                              child: Row(
+                                mainAxisAlignment: isSideBarOpen
+                                    ? MainAxisAlignment.spaceEvenly
+                                    : MainAxisAlignment.center,
+                                crossAxisAlignment: isSideBarOpen
+                                    ? CrossAxisAlignment.center
+                                    : CrossAxisAlignment.center,
+                                children: [
+                                  isSideBarOpen
+                                      ? Text(
+                                          "Filter",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16),
+                                        )
+                                      : Text(" "),
+                                  isSideBarOpen
+                                      ? SizedBox(width: 10)
+                                      : SizedBox(width: 0),
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          HexColor('#F8C764').withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: Center(
+                                        child: Container(
+                                      height: 12,
+                                      child: Image.asset(
+                                        'assets/images/filter.png',
+                                        fit: BoxFit.contain,
+                                      ),
+                                    )),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
