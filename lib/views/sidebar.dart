@@ -69,8 +69,6 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
     double deviceHeight = MediaQuery.of(context).size.height;
     double devideWidth = MediaQuery.of(context).size.width;
 
-    
-
     return Stack(
       children: [
         StreamBuilder<bool>(
@@ -86,17 +84,19 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
               left: isSideBarOpen ? 0 : 0,
               right: isSideBarOpen ? devideWidth / 2 : devideWidth - 100,
               child: GetBuilder<FastFoodItem>(
-                init:FastFoodItem(),
-                builder:(controller){
-                  return  Row(
+                init: FastFoodItem(),
+                builder: (controller) {
+                  return Row(
                     children: [
                       Expanded(
-                        child: Container(
+                        child: AnimatedContainer(
+                            duration: Duration(milliseconds: 100),
+                            curve: Curves.fastOutSlowIn,
                             width: devideWidth,
                             height: deviceHeight,
                             color: HexColor('#ffa500'),
                             child: Column(
-                              mainAxisSize: MainAxisSize.max,
+                              // mainAxisSize: MainAxisSize.max,
                               children: [
                                 // menu search
                                 GestureDetector(
@@ -135,7 +135,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                                   onTap: () {
                                     controller.changeItem(2);
                                   },
-                                  child: fastFoodItem(isSideBarOpen, "Hamburger",
+                                  child: fastFoodItem(
+                                      isSideBarOpen,
+                                      "Hamburger",
                                       'assets/images/hamburguer.png'),
                                 ),
                                 // beer tab
@@ -147,7 +149,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                                       'assets/images/beer.png'),
                                 ),
                                 // filter tab
+                                Spacer(),
                                 filterWidget(isSideBarOpen),
+                                SizedBox(height: 60,),
                               ],
                             )),
                       ),
@@ -164,14 +168,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                               decoration: BoxDecoration(
                                 color: HexColor('#ffa500'),
                               ),
-                              child:
-                                  // AnimatedIcon(
-                                  //   progress: animationController.view,
-                                  //   icon: AnimatedIcons.menu_close,
-                                  //   color: Colors.white,
-                                  //   size: 25,
-                                  // ),
-                                  Container(
+                              child: Container(
                                 width: 10,
                                 height: 10,
                                 decoration: BoxDecoration(
@@ -185,10 +182,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                       )
                     ],
                   );
-                } ,
-                              
+                },
               ),
-              
             );
           },
         ),
