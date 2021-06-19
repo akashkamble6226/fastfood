@@ -8,7 +8,8 @@ import 'homepage.dart';
 
 class SideBarLayout extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return Scaffold(
       backgroundColor: Colors.white,
       body: ColorfulSafeArea(
