@@ -5,31 +5,25 @@ Widget fastFoodSearch(bool isSideBarOpen) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-     
       Row(
         mainAxisAlignment:
             isSideBarOpen ? MainAxisAlignment.start : MainAxisAlignment.center,
         children: [
-
-           SizedBox(
-        width: 10,
-      ),
-           Container(
-            child: Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                color: HexColor('#F8C764').withOpacity(0.5),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Center(
-                child: IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
+          isSideBarOpen ? SizedBox(width: 5,) :SizedBox(width: 6,) ,
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: HexColor('#F8C764').withOpacity(0.5),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Center(
+              child: IconButton(
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.white,
                 ),
+                onPressed: () {},
               ),
             ),
           ),
@@ -53,7 +47,6 @@ Widget fastFoodSearch(bool isSideBarOpen) {
                         )
                       : Text(' '))
               : Text(' '),
-         
         ],
       ),
     ],

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 
 Widget fastFoodItem(
     bool isSideBarOpen, String name, String imgPath) {
-  return Padding(
-    padding: const EdgeInsets.only(top: 50),
-    child: Row(
-      mainAxisSize: MainAxisSize.max,
+  return  Row(
+      
       mainAxisAlignment:
           isSideBarOpen ? MainAxisAlignment.start : MainAxisAlignment.center,
       children: [
@@ -40,6 +38,6 @@ Widget fastFoodItem(
             : Text(' '),
         
       ],
-    ),
+    
   );
 }

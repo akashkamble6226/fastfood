@@ -1,4 +1,5 @@
 import 'package:fastfood/models/fast_food_item_dummy_data.dart';
+import 'package:fastfood/widgets/device_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -6,11 +7,9 @@ import 'package:hexcolor/hexcolor.dart';
 import '../models/pramotion_dummy_data.dart';
 import 'item_details.dart';
 
-class HomePage extends StatelessWidget {
+class BergerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // double devideWidth = MediaQuery.of(context).size.width;
-    // double fromLeft = 120;
     return Scaffold(
       backgroundColor: HexColor('ffffff'),
       body: CustomScrollView(
@@ -100,7 +99,7 @@ class BuildFastFoodItemsRow extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   // Navigation.push();
-                  Get.to(() =>ItemDetails());
+                  Get.to(() => ItemDetails());
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -119,7 +118,10 @@ class BuildFastFoodItemsRow extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  width: 120,
+                                  // width: 120,
+                                  width:
+                                      // MediaQuery.of(context).size.width ,
+                                      MediaQuery.of(context).size.width  * 0.3,
                                   child: Text(
                                     fastFoodItemList[ind].name,
                                     style: TextStyle(
@@ -150,10 +152,16 @@ class BuildFastFoodItemsRow extends StatelessWidget {
                       Positioned(
                         top: -40,
                         left: 0,
-                        right: -135,
+                        right: -90,
                         bottom: 50,
-                        child: Image.asset(
-                          fastFoodItemList[ind].img,
+                        child: FittedBox(
+                          
+                          child: Image.asset(
+                            fastFoodItemList[ind].img,
+                            fit: BoxFit.fitWidth,
+                            width: 40,
+                            height: 50,
+                          ),
                         ),
                       ),
                     ],
@@ -179,7 +187,8 @@ class BuildPramotionRow extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 120),
       child: Container(
-        height: 180,
+        // height: 180,
+        height: MediaQuery.of(context).size.height * 0.25,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: pramotionItemList.length,

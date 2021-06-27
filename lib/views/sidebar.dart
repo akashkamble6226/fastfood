@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:fastfood/controllers/fast_food_item_controller.dart';
+import 'package:fastfood/widgets/device_details.dart';
+
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:get/get.dart';
@@ -96,62 +98,100 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin {
                             height: deviceHeight,
                             color: HexColor('#ffa500'),
                             child: Column(
-                              // mainAxisSize: MainAxisSize.max,
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                // menu search
-                                GestureDetector(
-                                    onTap: () {
-                                      onIconPressed();
-                                    },
-                                    child: menuWidget(
-                                        isSideBarOpen, animationController)),
+                                // menu and search bar container
+                                Container(
+                                  padding: EdgeInsets.all(0),
+                                  // decoration: BoxDecoration(
+                                  //   border: Border.all(color: Colors.white),
+                                  // ),
+                                  height: DeviceDetails.deviceHeight * 0.05,
+                                  // MediaQuery.of(context).size.height * 0.15,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {
+                                          onIconPressed();
+                                        },
+                                        child: menuWidget(
+                                            isSideBarOpen, animationController),
+                                      ),
 
-                                SizedBox(
-                                  height: 20,
+                                      //search tab
+                                      fastFoodSearch(isSideBarOpen),
+                                    ],
+                                  ),
                                 ),
-                                //search tab
-                                fastFoodSearch(isSideBarOpen),
-                                // Chicken tab
-                                SizedBox(
-                                  height: 35,
+
+                                Container(
+                                  // decoration: BoxDecoration(
+                                  //   border: Border.all(color: Colors.white),
+                                  // ),
+                                  height: DeviceDetails.deviceHeight * 0.2,
+                                  // MediaQuery.of(context).size.height * 0.70,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      // Chicken tab
+
+                                      GestureDetector(
+                                        onTap: () {
+                                          controller.changeItem(0);
+                                        },
+                                        child: fastFoodItem(isSideBarOpen,
+                                            "Chicken", 'assets/images/leg.png'),
+                                      ),
+                                      // Pizza tab
+                                      GestureDetector(
+                                        onTap: () {
+                                          controller.changeItem(1);
+                                        },
+                                        child: fastFoodItem(isSideBarOpen,
+                                            "Pizza", 'assets/images/pizza.png'),
+                                      ),
+                                      // Hamburger tab
+                                      GestureDetector(
+                                        onTap: () {
+                                          controller.changeItem(2);
+                                        },
+                                        child: fastFoodItem(
+                                            isSideBarOpen,
+                                            "Hamburger",
+                                            'assets/images/hamburguer.png'),
+                                      ),
+                                      // beer tab
+                                      GestureDetector(
+                                        onTap: () {
+                                          controller.changeItem(3);
+                                        },
+                                        child: fastFoodItem(isSideBarOpen,
+                                            "Beer", 'assets/images/beer.png'),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    controller.changeItem(0);
-                                  },
-                                  child: fastFoodItem(isSideBarOpen, "Chicken",
-                                      'assets/images/leg.png'),
+
+                                Container(
+                                  // decoration: BoxDecoration(
+                                  //     border: Border.all(
+                                  //   color: Colors.white,
+                                  // )),
+                                  height:
+                                      // MediaQuery.of(context).size.height * 0.10,
+                                      DeviceDetails.deviceHeight * 0.03,
+                                  child: Column(
+                                    children: [
+                                      filterWidget(isSideBarOpen),
+                                    ],
+                                  ),
                                 ),
-                                // Pizza tab
-                                GestureDetector(
-                                  onTap: () {
-                                    controller.changeItem(1);
-                                  },
-                                  child: fastFoodItem(isSideBarOpen, "Pizza",
-                                      'assets/images/pizza.png'),
-                                ),
-                                // Hamburger tab
-                                GestureDetector(
-                                  onTap: () {
-                                    controller.changeItem(2);
-                                  },
-                                  child: fastFoodItem(
-                                      isSideBarOpen,
-                                      "Hamburger",
-                                      'assets/images/hamburguer.png'),
-                                ),
-                                // beer tab
-                                GestureDetector(
-                                  onTap: () {
-                                    controller.changeItem(3);
-                                  },
-                                  child: fastFoodItem(isSideBarOpen, "Beer",
-                                      'assets/images/beer.png'),
-                                ),
+
                                 // filter tab
-                                Spacer(),
-                                filterWidget(isSideBarOpen),
-                                SizedBox(height: 60,),
                               ],
                             )),
                       ),

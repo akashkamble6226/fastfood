@@ -98,10 +98,14 @@ class ItemDetails extends StatelessWidget {
                           angle: 270,
                           child: Padding(
                             padding: const EdgeInsets.only(right: 15),
-                            child: Image.asset(
-                              'assets/images/burger.png',
-                              width: 250,
-                              height: 250,
+                            child: FittedBox(
+
+                                                          child: Image.asset(
+                                'assets/images/burger.png',
+                                fit: BoxFit.fitWidth,
+                                width: 200,
+                                height: 250,
+                              ),
                             ),
                           ),
                         ),
