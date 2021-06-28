@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
-
+import 'package:sizer/sizer.dart';
 import 'package:ionicons/ionicons.dart';
 
 class ItemDetails extends StatelessWidget {
@@ -92,7 +92,7 @@ class ItemDetails extends StatelessWidget {
                           buildCharacteristics("295 kcal", "energy"),
                         ],
                       ),
-                      Spacer(),
+                      SizedBox(width: 10.w,),
                       FittedBox(
                         child: Transform.rotate(
                           angle: 270,
@@ -102,9 +102,9 @@ class ItemDetails extends StatelessWidget {
 
                                                           child: Image.asset(
                                 'assets/images/burger.png',
-                                fit: BoxFit.fitWidth,
-                                width: 200,
-                                height: 250,
+                                
+                                width: 50.w,
+                                height: 30.h,
                               ),
                             ),
                           ),

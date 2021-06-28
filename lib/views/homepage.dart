@@ -1,11 +1,11 @@
 import 'package:fastfood/models/fast_food_item_dummy_data.dart';
-import 'package:fastfood/widgets/device_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../models/pramotion_dummy_data.dart';
 import 'item_details.dart';
+import 'package:sizer/sizer.dart';
 
 class BergerMenu extends StatelessWidget {
   @override
@@ -120,8 +120,8 @@ class BuildFastFoodItemsRow extends StatelessWidget {
                                 child: Container(
                                   // width: 120,
                                   width:
-                                      // MediaQuery.of(context).size.width ,
-                                      MediaQuery.of(context).size.width  * 0.3,
+                                     
+                                      30.w,
                                   child: Text(
                                     fastFoodItemList[ind].name,
                                     style: TextStyle(
@@ -159,8 +159,8 @@ class BuildFastFoodItemsRow extends StatelessWidget {
                           child: Image.asset(
                             fastFoodItemList[ind].img,
                             fit: BoxFit.fitWidth,
-                            width: 40,
-                            height: 50,
+                            width: 80.w,
+                            height: 50.h,
                           ),
                         ),
                       ),
@@ -199,7 +199,8 @@ class BuildPramotionRow extends StatelessWidget {
                 clipBehavior: Clip.hardEdge,
                 children: [
                   Container(
-                    width: 130,
+                    width: 35.w,
+                    
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
                       color: HexColor(
